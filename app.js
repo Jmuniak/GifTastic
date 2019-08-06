@@ -2,7 +2,7 @@ $(function () {
     // Short Document Ready
 
     // array of topics
-    let topics = ["cowboy beepop", "star citizen", "snowboarding", "nick offerman", "iron man", "letterkenny", "guardians of the galaxy"]
+    let topics = ["Cowboy Beepop", "Star Citizen", "Snowboarding", "Nick Offerman", "Iron Man", "Letterkenny", "Guardians of the Galaxy"]
 
     console.log(topics);
     appendButtons();
@@ -19,6 +19,7 @@ $(function () {
             topics.push(newTopicText);
             console.log(topics);
             $("#buttons").empty();
+            $("#topicForm")[0].reset();
             appendButtons();
         }
     });
@@ -32,41 +33,45 @@ $(function () {
                 .attr("dataValue", newTopicText)
                 .text(newTopicText)
             $("#buttons").append(newButton);
+            // Button Click GET GIF function
+            // $(document.getElementsByClassName())  try this instead
+
+            $(".button").on("click", function () {
+                let topic = $(this).attr("dataValue");
+                let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+                    topic + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+                console.log("ajax start");
+                $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                    })
+                    .then(function (response) {
+                        let results = response.data;
+
+                        for (let i = 0; i < results.length; i++) {
+                            let gifDiv = $("<div>");
+
+                            let rating = results[i].rating;
+
+                            let p = $("<p>").text("Rating: " + rating);
+
+                            let topicImage = $("<img>");
+                            topicImage.attr("src", results[i].images.fixed_height.url);
+
+                            gifDiv.prepend(p);
+                            gifDiv.prepend(topicImage);
+
+                            $("#gifs-appear-here").prepend(gifDiv);
+                        }
+                    });
+                console.log("ajax done");
+            });
+
+
         })
     };
 
 
-    // Button Click GET GIF function
-    $(".button").on("click", function () {
-        let topic = $(this).attr("dataValue");
-        let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-            topic + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
-        console.log("ajax start");
-        $.ajax({
-                url: queryURL,
-                method: "GET"
-            })
-            .then(function (response) {
-                let results = response.data;
-
-                for (let i = 0; i < results.length; i++) {
-                    let gifDiv = $("<div>");
-
-                    let rating = results[i].rating;
-
-                    let p = $("<p>").text("Rating: " + rating);
-
-                    let topicImage = $("<img>");
-                    topicImage.attr("src", results[i].images.fixed_height.url);
-
-                    gifDiv.prepend(p);
-                    gifDiv.prepend(topicImage);
-
-                    $("#gifs-appear-here").prepend(gifDiv);
-                }
-            });
-        console.log("ajax done");
-    });
 
 
 });
