@@ -26,19 +26,7 @@ $(function () {
 
 
 
-    //     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-    //     var state = $(this).attr("data-state");
-    //     // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-    //     // Then, set the image's data-state to animate
-    //     // Else set src to the data-still value
-    //     if (state === "still") {
-    //         $(this).attr("src", $(this).attr("data-animate"));
-    //         $(this).attr("data-state", "animate");
-    //     } else {
-    //         $(this).attr("src", $(this).attr("data-still"));
-    //         $(this).attr("data-state", "still");
-    //     }
-    // });
+
 
     // Append topics to buttons div
     function appendButtons() {
@@ -69,18 +57,41 @@ $(function () {
 
                         let rating = results[i].rating;
 
+                        let stillState = results[i].images.original_still.url;
+                        let animateState = results[i].images.fixed_height.url;
+                        let initialState = results[i].images.fixed_height.url;
                         let p = $("<p>").text("Rating: " + rating);
-
                         let topicImage = $("<img>");
-                        topicImage.attr("src", results[i].images.fixed_height.url);
+                        let state = topicImage.attr("data-state");
 
+                        topicImage.attr("src", initialState);
+                        topicImage.attr("still", stillState);
+                        topicImage.attr("animate", animateState);
+                        topicImage.attr("data-state", "still");
+                        console.log(topicImage.attr("data-state"));
+                        // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+                        // Then, set the image's data-state to animate
+                        // Else set src to the data-still value
+                        $(topicImage).on("click", function () {
+                            state = $(this).attr("data-state"); {
+                                if (state === "still") {
+                                    $(this).attr("animate", $(this).attr("data-animate"));
+                                    $(this).attr("data-state", "animate");
+                                } else {
+                                    $(this).attr("src", $(this).attr("data-still"));
+                                    $(this).attr("data-state", "still");
+                                }
+                            };
+                            console.log("state changed?");
+                            console.log(state);
+                        });
                         gifDiv.prepend(p);
                         gifDiv.prepend(topicImage);
-
                         $("#gifs-appear-here").prepend(gifDiv);
                     }
                 });
             console.log("ajax done");
+
         });
     };
 
