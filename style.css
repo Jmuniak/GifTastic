@@ -1,0 +1,33 @@
+/* General body and background */
+body {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/papyrus.png");
+    margin: 0;
+  }
+
+  h1 {
+      color: white; 
+  }
+
+#gifs-appear-here {  
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .topicImg {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 5px 5px;
+    position: relative;
+    max-width: 100%;
+  }
+/*   
+  .gifRating {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background: transparent;
+  }
+   */
