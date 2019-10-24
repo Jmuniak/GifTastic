@@ -56,7 +56,7 @@ $(function () {
                 for (let i = 0; i < 5; i++) {
                     let gifDiv = $("<div>");
                     let rating = $("<p>").text("Rating: " + results[i].rating);
-                    let topicImage = $(`<img class="pics" src=${results[i].images.original_still.url} src-alt=${results[i].images.fixed_height.url}></img>`);
+                    let topicImage = $(`<img class="topicImg" src=${results[i].images.downsized_still.url} src-alt=${results[i].images.downsized.url}></img>`);
 
                     gifDiv.prepend(rating);
                     gifDiv.prepend(topicImage);
