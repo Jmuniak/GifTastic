@@ -4,29 +4,26 @@ body {
     margin: 0;
   }
 
-  h1 {
-      color: white; 
+  h1, h2, h3, h4 {
+      color: white !important; 
+      font-family: 'Metamorphous', cursive !important;
+      text-align: center !important; 
   }
 
-#gifs-appear-here {  
+/* #gifs-appear-here {  
     margin: 0 auto;
-  }
+  } */
   
   .topicImg {
-    display: inline-block;
     width: 470px;
     height: 240px;
-    margin: 5px 5px;
-    position: relative;
+    margin: auto;
     max-width: 100%;
   }
   
   .gifRating {
-    position: absolute;
-    bottom: 5px;
-    width: 100%;
-    color: white;
-    text-align: center;
-    background: transparent;
+    color: white !important;
+    text-align: center !important; 
+    font-family: 'Metamorphous', cursive !important;
   }
   

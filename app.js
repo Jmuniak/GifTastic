@@ -27,10 +27,10 @@ $(function () {
     // Append topics to buttons div
     function appendButtons() {
         // create a  button with a dataValue that matches the array index text
-        topics.forEach(newTopicText => {
-            let newButton = $(`<button type="button" class="btn btn-outline-dark topicBtn">`)
-                .attr("dataValue", newTopicText)
-                .text(newTopicText)
+        topics.forEach(topicText => {
+            let newButton = $(`<button type="button" class="btn btn-outline-light topicBtn">`)
+                .attr("dataValue", topicText)
+                .text(topicText)
             $("#buttons").append(newButton);
         });
     };
@@ -44,37 +44,37 @@ $(function () {
         $.ajax({
             url: queryURL,
             method: "GET"
-        })
-            .then(function (response) {
-                console.log(response);
-                let results = response.data;
+        }).then(function (response) {
+            console.log(response);
+            let results = response.data;
 
-                results.forEach(element => {
-                    let gifDiv = $(`<div class="col-md-4">`);
-                    let rating = $(`<p class="gifRating col-sm-12">`).text("Rating: " + element.rating);
-                    let topicImage = $(`<img class="topicImg" src=${element.images.downsized_still.url} src-alt=${element.images.downsized.url}></img>`);
-                    gifDiv.prepend(rating);
-                    gifDiv.prepend(topicImage);
-                    $("#gifs-appear-here").prepend(gifDiv);
-                });
-                $(".topicImg").on("click", function () {
-                    console.log("onclick")
-                    console.log(this)
-                    let temp = $(this).attr('src')
-                    $(this).attr("src", $(this).attr("src-alt"))
-                    $(this).attr("src-alt", temp)
-                });
+            results.forEach(element => {
+                let gifDiv = $(`<div class="col-md-4">`);
+                let rating = $(`<p class="gifRating col-sm-12">`).text("Rating: " + element.rating);
+                let topicImage = $(`<img class="topicImg" src=${element.images.downsized_still.url} src-alt=${element.images.downsized.url}></img>`);
+                gifDiv.prepend(rating);
+                gifDiv.prepend(topicImage);
+                $("#gifs-appear-here").prepend(gifDiv);
             });
+            // 'pause play' functionality for gif images. Using jquery and a bubble switch
+            $(".topicImg").on("click", function () {
+                console.log("onclick")
+                console.log(this)
+                let temp = $(this).attr('src')
+                $(this).attr("src", $(this).attr("src-alt"))
+                $(this).attr("src-alt", temp)
+            });
+        });
         console.log("ajax done");
 
     };
 
-        // Button Click GET GIF function
-        $(".topicBtn").on("click", function () {
-            console.log(this);
-            let btnDataVal = $(this).attr("dataValue");
-            runAjax(btnDataVal);
-        });
+    // Button Click GET GIF function
+    $(document).on("click", ".topicBtn", function () {
+        console.log(this);
+        let btnDataVal = $(this).attr("dataValue");
+        runAjax(btnDataVal);
+    });
 
 
     // document ready function

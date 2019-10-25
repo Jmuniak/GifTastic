@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <!-- My Stylesheet -->
     <link rel="stylesheet" href="./style.css" />
     <!-- Bootstrap CSS CDN  -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-
     <!-- Font Awesome CSS Icons (For cool glyphicons) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
@@ -20,32 +19,33 @@
 <body>
 
     <div class="container bg-secondary">
-        <div class="jumbrotron col-10 offset-2">
-            <h1>GIF Tastic Homework</h1>
+        <div class="jumbrotron col-8 offset-2">
+            <h4>Welcome to the:</h4>
+            <h1>GIF Tastic Assignment</h1>
         </div>
         <div>
-            <div class="jumbrotron col-10 offset-2">
+            <div class="jumbrotron col-8 offset-2">
                 <h4>Input a Topic into the field!</h4>
             </div>
             <form id="topicForm">
-                <div class="row">
-                    <div class="col-8 offset-1">
+                <div class="form-group row">
+                    <div class="col-8 offset-2">
                         <input type="text" id="topicInput" class="form-control" placeholder="Input Topic here">
-                    </div>
-                    <div class="row justify-content-md-center">
-                        <button class="btn-outline-light btn-lg btn-block" type="submit">Submit</button>
+                        <br>
+                        <button class="col-8 offset-2 btn-outline-light btn-lg btn-block" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
                     </div>
             </form>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-10 offset-1" id="buttons">
-
+        <!-- Dynamically populated divs -->
+        <div class="row">
+            <div class="col-10 offset-1" id="buttons">
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="row" id="gifs-appear-here">
-    </div>
+        <br>
+        <div class="row" id="gifs-appear-here">
+        </div>
 
     </div>
     <!-- end of container -->
