@@ -8,12 +8,12 @@ This is a Gif Tastic assignment that was built with bootstrap and jquery to be m
 Link to GitHub Pages live site: https://jmuniak.github.io/GifTastic/
 
 ## Built With
-HTML5 - markup language
-CSS3 - styling
-Javascript - programming language
-jQuery - javascript library
-Bootstrap - website framework
-Giphy API - to retrieve gifs
+# HTML5 - markup language
+# CSS3 - styling
+# Javascript - programming language
+# jQuery - javascript library
+# Bootstrap - website framework
+# Giphy API - to retrieve gifs
 
 # Authors
 Jeremy Muniak
