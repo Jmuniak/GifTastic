@@ -1,9 +1,7 @@
 # GifTastic
 #### https://jmuniak.github.io/GifTastic/
 
-
 ![logo](assets/images/GifTastic.png)
-
 
 #### Description
 This is a Gif Tastic assignment that was built with bootstrap and jquery to be mobile responsive. It dynamically creates buttons from an array of topics. Those buttons make ajax calls to giphy.com with a limit of 15 at a time and then appends those to the dom where the user can click the image tile to make the gif play. The user has the ability to add new topics to the array, this will automatically create a button and launch the ajax call for them upon submitting the form. 
