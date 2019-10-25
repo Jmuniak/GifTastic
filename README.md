@@ -10,10 +10,15 @@ Link to GitHub Pages live site: https://jmuniak.github.io/GifTastic/
 
 # Built With
 * HTML5 - markup language
+
 * CSS3 - styling
+
 * avascript - programming language
+
 * jQuery - javascript library
+
 * Bootstrap - website framework
+
 * Giphy API - to retrieve gifs
 
 
@@ -27,6 +32,7 @@ Link to GitHub Pages live site: https://jmuniak.github.io/GifTastic/
 
 # Acknowledgments
 * Unsplash - Attribution free photography
+
 * Background Photo by Daniil Silantev on Unsplash
 
 
