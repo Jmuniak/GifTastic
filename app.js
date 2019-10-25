@@ -2,7 +2,7 @@ $(function () {
     // Short Document Ready
 
     // array of topics
-    let topics = ["Boba Fett", "Sci-Fi", "Snowboarding", "Nick Offerman", "Iron Man", "Letterkenny", "Guardians of the Galaxy", "R2D2", "Treasure Planet", "Hover Cars", "Avengers", "Nature", "Bob Ross"]
+    let topics = ["Puppies", "Boba Fett", "Sci-Fi", "Snowboarding", "Nick Offerman", "Iron Man", "Letterkenny", "Guardians of the Galaxy", "R2D2", "X-wing", "Hover Cars", "Avengers", "Nature", "Bob Ross"]
 
     console.log(topics);
     appendButtons();
