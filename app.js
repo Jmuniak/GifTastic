@@ -49,15 +49,14 @@ $(function () {
                 console.log(response);
                 let results = response.data;
 
-                for (let i = 0; i < 15; i++) {
+                results.forEach(element => {
                     let gifDiv = $(`<div class="col-md-4">`);
-                    let rating = $(`<p class="gifRating col-sm-12">`).text("Rating: " + results[i].rating);
-                    let topicImage = $(`<img class="topicImg" src=${results[i].images.downsized_still.url} src-alt=${results[i].images.downsized.url}></img>`);
-
+                    let rating = $(`<p class="gifRating col-sm-12">`).text("Rating: " + element.rating);
+                    let topicImage = $(`<img class="topicImg" src=${element.images.downsized_still.url} src-alt=${element.images.downsized.url}></img>`);
                     gifDiv.prepend(rating);
                     gifDiv.prepend(topicImage);
                     $("#gifs-appear-here").prepend(gifDiv);
-                }
+                });
                 $(".topicImg").on("click", function () {
                     console.log("onclick")
                     console.log(this)
