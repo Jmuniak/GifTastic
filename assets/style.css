@@ -1,0 +1,33 @@
+/* General body and background */
+body {
+  background: fixed center/cover url("././/images/daniil-silantev-cKT2WBaIXVU-unsplash.jpg");
+  margin: 0;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+footer {
+  color: white !important;
+  font-family: 'Metamorphous', cursive !important;
+  text-align: center !important;
+}
+
+/* #gifs-appear-here {  
+    margin: 0 auto;
+  } */
+
+.topicImg {
+  width: 470px;
+  height: 240px;
+  margin: auto;
+  max-width: 100%;
+}
+
+.gifRating {
+  color: white !important;
+  text-align: center !important;
+  font-family: 'Metamorphous', cursive !important;
+}
