@@ -18,16 +18,8 @@ This is GifTastic, a page that was styled with bootstrap and jquery to be mobile
 * Giphy API - to retrieve gifs
 #
 
-<<<<<<< HEAD
-### Getting Started:
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-1. Clone the repo to your local system. 
-2. Open the index.html file in your prefered text editor and open the file in your browser. 
-3. Add your train data into the form and don't miss your train :) 
-=======
 ### Installing
 * Clone the repo to your local machine, open your favorite code editor or run 'index.html' in Chrome or your default browser
->>>>>>> 2fc10306fa9fa421016f15292b394fa0e09c3516
 #
 
 ### Authors
